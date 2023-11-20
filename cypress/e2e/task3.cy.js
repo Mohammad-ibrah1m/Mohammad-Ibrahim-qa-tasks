@@ -3,19 +3,56 @@
 describe('task3', () => {
   it('sign in page', () => {
     cy.visit('https://demo.productionready.io/#/login');
-    // check sign in page title
+    // select sign in page title
     cy.get('h1');
 
-    // check link to switch to registeration form
+    // select link to switch to registeration form
     cy.contains('a', 'Need an account?');
 
-    // check email input
+    // select email input
     cy.get('input[type=email]');
 
-    // check password input
+    // select password input
     cy.get('input[type=password]');
 
-    // check sign in button
+    // select sign in button
     cy.get('fieldset').contains('Sign in'); // other way cy.get('fieldset').find('.btn')
+  });
+
+  it('main blog page', () => {
+    cy.visit('https://demo.productionready.io/');
+
+    //select homepage logo
+    cy.get('.navbar-brand');
+
+    //select home link in the navbar
+    cy.get('ul[show-authed=false] .nav-item:first-child>.nav-link');
+
+    //select sign up link in the navbar
+    cy.get('.nav-item').find('.nav-link').contains('Sign up');
+
+    //select homepage title
+    cy.contains('h1', 'conduit');
+
+    //select homepage subtitle
+    cy.get('.banner p');
+
+    //select popular tags
+    cy.contains('Popular Tags');
+
+    //select codebaseShow tag
+    cy.contains('.tag-list>a', 'codebaseShow');
+
+    //select deserunt tag
+    cy.get('.tag-list>a').last();
+
+    //select global feed link
+    cy.get('.nav-link.active').contains('Global Feed');
+
+    //select favorite button
+    cy.get('article-preview:first-child favorite-btn');
+
+    //select read more button
+    cy.contains('span', 'Read more...');
   });
 });
