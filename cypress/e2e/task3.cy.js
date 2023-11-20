@@ -16,6 +16,6 @@ describe('task3', () => {
     cy.get('input[type=password]');
 
     // check sign in button
-    cy.get('fieldset').find('.btn');
+    cy.get('fieldset').contains('Sign in'); // other way cy.get('fieldset').find('.btn')
   });
 });
