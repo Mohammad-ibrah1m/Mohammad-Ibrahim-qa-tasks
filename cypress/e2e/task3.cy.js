@@ -37,7 +37,7 @@ describe('task3', () => {
     //select homepage subtitle
     cy.get('.banner p');
 
-    cy.wait(2000);
+    cy.wait(4000);
     //select popular tags
     cy.contains('Popular Tags');
 
@@ -63,6 +63,11 @@ describe('task3', () => {
     );
 
     cy.get('.banner h1');
+    cy.get('follow-btn').first();
+    cy.get('favorite-btn[article="$ctrl.article"]').first();
+    cy.get('.banner .article-meta > .info > .author ');
+    cy.get('.banner .article-meta > .info > .date ');
+    cy.get('.banner .article-meta > img ');
     cy.get('.tag-list > li:first-child');
     cy.get('.tag-list > li').last();
     cy.get('.article-content p');
