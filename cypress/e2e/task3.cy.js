@@ -37,6 +37,7 @@ describe('task3', () => {
     //select homepage subtitle
     cy.get('.banner p');
 
+    cy.wait(2000);
     //select popular tags
     cy.contains('Popular Tags');
 
@@ -54,5 +55,16 @@ describe('task3', () => {
 
     //select read more button
     cy.contains('span', 'Read more...');
+  });
+
+  it('article page', () => {
+    cy.visit(
+      'https://demo.productionready.io/#/article/If-we-quantify-the-alarm-we-can-get-to-the-FTP-pixel-through-the-online-SSL-interface!-120863'
+    );
+
+    cy.get('.banner h1');
+    cy.get('.tag-list > li:first-child');
+    cy.get('.tag-list > li').last();
+    cy.get('.article-content p');
   });
 });
