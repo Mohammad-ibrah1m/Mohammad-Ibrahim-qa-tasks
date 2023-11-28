@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
 package.json
-e2e/practice-file.cy.js
+cypress/e2e/practice-file.cy.js
