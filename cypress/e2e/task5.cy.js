@@ -7,6 +7,7 @@ describe('task5', () => {
     cy.get('#lastname').should('be.visible');
     cy.get('#email_address').should('be.visible');
     cy.get('#password').should('be.visible');
+    cy.get('#password-strength-meter').should('be.visible');
     cy.get('#password-confirmation').should('be.visible');
     cy.get('button.submit').should('be.visible');
     cy.get('.action.back').should('be.hidden');
@@ -17,6 +18,7 @@ describe('task5', () => {
     cy.get('#lastname').clear().type('Ibrahim', { delay: 100 });
     cy.get('#email_address').clear().type('mohammadibrahim9@gmail.com', { delay: 100 });
     cy.get('#password').clear().type('Mohammad_task5', { delay: 100 });
+    cy.get('#password-strength-meter').should('have.css', 'background-color', 'rgb(244, 244, 244)');
     cy.get('#password-confirmation').clear().type('Mohammad_task5', { delay: 100 });
 
     // cy.get('button.submit').click();
